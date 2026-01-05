@@ -1,0 +1,451 @@
+/* 커스텀 스타일 (Tailwind CSS 보완용) */
+
+/* ===== 배경 그라데이션 ===== */
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+/* ===== 글래스모피즘 컨테이너 ===== */
+.glass-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+}
+
+/* ===== 헤더 스타일 ===== */
+header h1 {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: none;
+}
+
+header p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* ===== 통계 카드 ===== */
+.stats-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 100%);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 40px rgba(31, 38, 135, 0.1);
+}
+
+.stat-item {
+    padding: 1rem;
+    border-radius: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.stat-item:nth-child(1) {
+    background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+}
+
+.stat-item:nth-child(2) {
+    background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+}
+
+.stat-item:nth-child(3) {
+    background: linear-gradient(135deg, #ffedd5 0%, #fed7aa 100%);
+}
+
+.stat-item:nth-child(4) {
+    background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%);
+}
+
+/* ===== 입력 폼 스타일 ===== */
+.input-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 40px rgba(31, 38, 135, 0.1);
+}
+
+.input-card input {
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.input-card input:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.15);
+}
+
+.input-card button[type="submit"] {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.input-card button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+}
+
+.input-card button[type="submit"]:active {
+    transform: translateY(0);
+}
+
+/* ===== 필터 버튼 ===== */
+.filter-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 1rem;
+    box-shadow: 0 10px 40px rgba(31, 38, 135, 0.1);
+}
+
+.filter-btn {
+    background-color: #f3f4f6;
+    color: #6b7280;
+    border-radius: 12px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.filter-btn:hover {
+    background-color: #e5e7eb;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.filter-btn.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* ===== 버킷 리스트 항목 카드 ===== */
+.bucket-item {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 20px rgba(31, 38, 135, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    transition: all 0.3s ease;
+    animation: slideIn 0.4s ease-out;
+}
+
+.bucket-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(31, 38, 135, 0.15);
+}
+
+.bucket-item.completed {
+    background: linear-gradient(135deg, rgba(209, 250, 229, 0.9) 0%, rgba(167, 243, 208, 0.9) 100%);
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 완료된 항목 스타일 */
+.bucket-item .line-through {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+/* 체크 버튼 */
+.check-btn {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 2px solid #d1d5db;
+    background: white;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.check-btn:hover {
+    border-color: #667eea;
+    background: rgba(102, 126, 234, 0.1);
+    transform: scale(1.1);
+}
+
+.check-btn.checked {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    border-color: transparent;
+    color: white;
+}
+
+/* 액션 버튼들 */
+.action-btn {
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.edit-btn {
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    color: white;
+    box-shadow: 0 2px 10px rgba(251, 191, 36, 0.3);
+}
+
+.edit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(251, 191, 36, 0.4);
+}
+
+.delete-btn {
+    background: linear-gradient(135deg, #f87171 0%, #ef4444 100%);
+    color: white;
+    box-shadow: 0 2px 10px rgba(248, 113, 113, 0.3);
+}
+
+.delete-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(248, 113, 113, 0.4);
+}
+
+/* ===== 빈 상태 메시지 ===== */
+#emptyState {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    padding: 3rem;
+    text-align: center;
+    animation: fadeIn 0.5s ease-in;
+}
+
+#emptyState p:first-child {
+    font-size: 1.25rem;
+    color: #9ca3af;
+    margin-bottom: 0.5rem;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* ===== 모달 스타일 ===== */
+#editModal {
+    animation: fadeIn 0.2s ease-in;
+}
+
+#editModal > div {
+    background: rgba(255, 255, 255, 0.98);
+    border-radius: 24px;
+    padding: 2rem;
+    box-shadow: 0 25px 50px rgba(31, 38, 135, 0.25);
+    animation: scaleIn 0.3s ease-out;
+}
+
+#editModal h3 {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+#editModal input {
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+#editModal input:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.15);
+}
+
+#editModal button[type="submit"] {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+#editModal button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+}
+
+#cancelEdit {
+    background: #f3f4f6;
+    transition: all 0.3s ease;
+}
+
+#cancelEdit:hover {
+    background: #e5e7eb;
+    transform: translateY(-2px);
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ===== 스크롤바 스타일 ===== */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(102, 126, 234, 0.5);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(102, 126, 234, 0.7);
+}
+
+/* ===== 통계 숫자 애니메이션 ===== */
+#totalCount, #completedCount, #progressCount, #completionRate {
+    transition: all 0.3s ease;
+}
+
+/* ===== 모바일 반응형 ===== */
+@media (max-width: 640px) {
+    body {
+        padding: 1rem;
+    }
+
+    .bucket-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+    }
+
+    .bucket-item > div:last-child {
+        width: 100%;
+        justify-content: flex-end;
+        margin-top: 12px;
+    }
+
+    .filter-btn {
+        font-size: 0.875rem;
+        padding: 0.625rem 1rem;
+    }
+
+    .stats-card {
+        padding: 1rem;
+    }
+
+    .stat-item {
+        padding: 0.75rem 0.5rem;
+    }
+}
+
+/* ===== 다크 모드 지원 ===== */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #4c1d95 100%);
+    }
+
+    .glass-card,
+    .stats-card,
+    .input-card,
+    .filter-card,
+    .bucket-item,
+    #emptyState {
+        background: rgba(30, 27, 75, 0.9);
+        border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .bucket-item.completed {
+        background: linear-gradient(135deg, rgba(6, 78, 59, 0.9) 0%, rgba(4, 120, 87, 0.9) 100%);
+    }
+
+    header p {
+        color: rgba(255, 255, 255, 0.7);
+    }
+
+    .text-gray-800,
+    .text-gray-600 {
+        color: #e5e7eb;
+    }
+
+    .filter-btn {
+        background-color: rgba(55, 48, 107, 0.8);
+        color: #c4b5fd;
+    }
+
+    .filter-btn:hover {
+        background-color: rgba(76, 29, 149, 0.8);
+    }
+
+    .input-card input,
+    #editModal input {
+        background: rgba(55, 48, 107, 0.8);
+        border-color: rgba(139, 92, 246, 0.3);
+        color: white;
+    }
+
+    .input-card input::placeholder {
+        color: rgba(196, 181, 253, 0.6);
+    }
+
+    #editModal > div {
+        background: rgba(30, 27, 75, 0.98);
+    }
+
+    .stat-item:nth-child(1) {
+        background: linear-gradient(135deg, rgba(99, 102, 241, 0.3) 0%, rgba(129, 140, 248, 0.3) 100%);
+    }
+
+    .stat-item:nth-child(2) {
+        background: linear-gradient(135deg, rgba(16, 185, 129, 0.3) 0%, rgba(52, 211, 153, 0.3) 100%);
+    }
+
+    .stat-item:nth-child(3) {
+        background: linear-gradient(135deg, rgba(251, 146, 60, 0.3) 0%, rgba(251, 191, 36, 0.3) 100%);
+    }
+
+    .stat-item:nth-child(4) {
+        background: linear-gradient(135deg, rgba(167, 139, 250, 0.3) 0%, rgba(196, 181, 253, 0.3) 100%);
+    }
+
+    .check-btn {
+        background: rgba(55, 48, 107, 0.8);
+        border-color: rgba(139, 92, 246, 0.5);
+    }
+
+    #cancelEdit {
+        background: rgba(55, 48, 107, 0.8);
+        color: #c4b5fd;
+    }
+
+    #emptyState p {
+        color: rgba(196, 181, 253, 0.7);
+    }
+}
