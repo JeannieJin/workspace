@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { MobileNav } from "./mobile-nav";
 import { useScrollTo } from "@/hooks/use-scroll-to";
@@ -41,6 +43,9 @@ export function Header() {
 
         {/* 우측 액션 */}
         <div className="flex items-center gap-2">
+          <Button asChild variant="ghost" size="sm" className="hidden md:flex">
+            <Link href="/login">로그인</Link>
+          </Button>
           <ThemeToggle />
           <MobileNav />
         </div>

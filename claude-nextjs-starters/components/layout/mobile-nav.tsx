@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -55,6 +56,11 @@ export function MobileNav() {
               {item.label}
             </button>
           ))}
+          <div className="border-t pt-4 mt-4">
+            <Button asChild className="w-full" size="lg">
+              <Link href="/login">로그인</Link>
+            </Button>
+          </div>
         </nav>
       </SheetContent>
     </Sheet>
